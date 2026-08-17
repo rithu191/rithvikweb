@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | DevOps Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<div class="login-container">
+
+
+    <div class="login-box">
+
+
+        <h1>DevOps Portal</h1>
+
+        <h2>Admin Login</h2>
+
+
+        <p class="subtitle">
+            Administrator Control Panel
+        </p>
+
+
+
+        <form onsubmit="adminLogin(event)">
+
+
+            <label for="adminUsername">
+                Admin Username
+            </label>
+
+
+            <input
+                    type="text"
+                    id="adminUsername"
+                    placeholder="Enter Admin Username"
+                    required
+            >
+
+
+
+            <label for="adminPassword">
+                Password
+            </label>
+
+
+            <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter Password"
+                    required
+            >
+
+
+
+            <button type="submit">
+                Login
+            </button>
+
+
+
+        </form>
+
+
+
+        <p class="switch">
+
+            Are you a Student?
+
+            <a href="student-login.html">
+                Student Login
+            </a>
+
+        </p>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

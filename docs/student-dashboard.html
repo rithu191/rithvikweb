@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Dashboard | DevOps Portal</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+
+  <div class="logo">
+    DevOps Portal
+  </div>
+
+  <div class="nav-links">
+    <a href="student-dashboard.html">Dashboard</a>
+    <a href="#">Resources</a>
+    <a href="#">Announcements</a>
+
+    <button onclick="logout()">
+      Logout
+    </button>
+  </div>
+
+</nav>
+
+
+<!-- Dashboard -->
+<main class="dashboard-container">
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+
+    <h1>
+      Welcome, <span id="studentName">Student</span>!
+    </h1>
+
+    <p>
+      Welcome to your Student DevOps Dashboard.
+      Access your learning resources, announcements,
+      and DevOps activities from here.
+    </p>
+
+  </section>
+
+
+  <!-- Dashboard Cards -->
+  <section class="dashboard-cards">
+
+    <div class="dashboard-card">
+
+      <h2>🚀 What is DevOps?</h2>
+
+      <p>
+        DevOps is a combination of development and
+        operations practices that helps teams build,
+        test, and deliver software faster and more reliably.
+      </p>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+      <h2>🎯 Aim of DevOps</h2>
+
+      <p>
+        The main aim of DevOps is to improve collaboration,
+        automate processes, reduce deployment time,
+        and continuously deliver quality software.
+      </p>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+      <h2>⚙️ What We Do</h2>
+
+      <p>
+        We use tools such as Git, GitHub, Maven,
+        Jenkins, Docker, and cloud platforms to
+        automate software development and deployment.
+      </p>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+      <h2>📚 Learning Resources</h2>
+
+      <p>
+        Access DevOps tutorials, laboratory exercises,
+        project materials, and useful documentation.
+      </p>
+
+      <button onclick="showMessage()">
+        View Resources
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- Student Information -->
+  <section class="student-info">
+
+    <h2>Student Information</h2>
+
+    <div class="info-box">
+
+      <p>
+        <strong>Student ID:</strong>
+        <span id="displayStudentId">Not Available</span>
+      </p>
+
+      <p>
+        <strong>Role:</strong>
+        Student
+      </p>
+
+      <p>
+        <strong>Department:</strong>
+        Computer Science and Engineering
+      </p>
+
+      <p>
+        <strong>Portal:</strong>
+        DevOps Learning Portal
+      </p>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+
+  <p>
+    © 2026 DevOps Portal | Student Dashboard
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
