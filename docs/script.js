@@ -1,150 +1,207 @@
-// ===============================
-// STUDENT LOGIN
-// ===============================
-
-function studentLogin(event) {
-
-    // Stop the form from refreshing the page
-    event.preventDefault();
-
-    // Get values from the login form
-    const studentId = document.getElementById("studentId").value;
-    const password = document.getElementById("studentPassword").value;
-
-    // Demo login credentials
-    const correctStudentId = "student";
-    const correctPassword = "1234";
-
-    // Check login
-    if (studentId === correctStudentId && password === correctPassword) {
-
-        // Save student information
-        localStorage.setItem("studentLoggedIn", "true");
-        localStorage.setItem("studentId", studentId);
-
-        // Go to student dashboard
-        window.location.href = "student-dashboard.html";
-
-    } else {
-
-        alert("Invalid Student ID or Password.");
-
-    }
-}
-
-
-// ===============================
-// ADMIN LOGIN
-// ===============================
-
-function adminLogin(event) {
-
-    // Stop the form from refreshing the page
-    event.preventDefault();
-
-    // Get values from admin login form
-    const username = document.getElementById("adminUsername").value;
-    const password = document.getElementById("adminPassword").value;
-
-    // Demo admin credentials
-    const correctUsername = "admin";
-    const correctPassword = "admin123";
-
-    // Check login
-    if (username === correctUsername && password === correctPassword) {
-
-        // Save admin login status
-        localStorage.setItem("adminLoggedIn", "true");
-        localStorage.setItem("adminUsername", username);
-
-        // Go to admin dashboard
-        window.location.href = "admin-dashboard.html";
-
-    } else {
-
-        alert("Invalid Admin Username or Password.");
-
-    }
-}
-
-
-// ===============================
-// STUDENT DASHBOARD
-// ===============================
-
-function loadStudentData() {
-
-    const studentId = localStorage.getItem("studentId");
-
-    const studentName = document.getElementById("studentName");
-    const displayStudentId = document.getElementById("displayStudentId");
-
-    if (studentId) {
-
-        if (studentName) {
-            studentName.textContent = studentId;
-        }
-
-        if (displayStudentId) {
-            displayStudentId.textContent = studentId;
-        }
-
-    }
-}
-
-
-// ===============================
-// ADMIN DASHBOARD
-// ===============================
-
-function loadAdminData() {
-
-    const username = localStorage.getItem("adminUsername");
-
-    const adminName = document.getElementById("adminName");
-
-    if (username && adminName) {
-        adminName.textContent = username;
-    }
-}
-
-
-// ===============================
-// LOGOUT
-// ===============================
-
-function logout() {
-
-    // Remove login information
-    localStorage.removeItem("studentLoggedIn");
-    localStorage.removeItem("studentId");
-
-    localStorage.removeItem("adminLoggedIn");
-    localStorage.removeItem("adminUsername");
-
-    // Return to home page
-    window.location.href = "index.html";
-}
-
-
-// ===============================
-// RESOURCE MESSAGE
-// ===============================
-
-function showMessage() {
-
-    alert("Learning resources will be available soon!");
-
-}
-
-
-// ===============================
-// RUN WHEN PAGE LOADS
-// ===============================
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    loadStudentData();
-    loadAdminData();
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (mobileMenu && navLinks) {
+
+        mobileMenu.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+            const icon = mobileMenu.querySelector("i");
+
+            if (navLinks.classList.contains("show")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================= */
+
+    const links = document.querySelectorAll(".nav-links a");
+
+    links.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (navLinks) {
+                navLinks.classList.remove("show");
+            }
+
+            const icon = mobileMenu
+                ? mobileMenu.querySelector("i")
+                : null;
+
+            if (icon) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================= */
+
+    const sections = document.querySelectorAll("section[id]");
+
+    function updateActiveNav() {
+
+        let currentSection = "";
+
+        sections.forEach(function (section) {
+
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
+
+        });
+
+        links.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            const target = link.getAttribute("href");
+
+            if (target === "#" + currentSection) {
+                link.classList.add("active");
+            }
+
+        });
+
+    }
+
+    window.addEventListener("scroll", updateActiveNav);
+
+    updateActiveNav();
+
+
+    /* =========================
+       FOOTER YEAR
+    ========================= */
+
+    const year = document.getElementById("year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    /* =========================
+       SMOOTH SCROLL
+    ========================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+
+        anchor.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       TERMINAL TYPING EFFECT
+    ========================= */
+
+    const typingElement = document.querySelector(".typing");
+
+    if (typingElement) {
+
+        let visible = true;
+
+        setInterval(function () {
+
+            visible = !visible;
+
+            typingElement.style.opacity = visible ? "1" : "0";
+
+        }, 500);
+
+    }
+
+
+    /* =========================
+       CARD REVEAL
+    ========================= */
+
+    const revealElements = document.querySelectorAll(
+        ".about-card, .tech-card, .access-card"
+    );
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    revealElements.forEach(function (element) {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
+
+        observer.observe(element);
+
+    });
 
 });

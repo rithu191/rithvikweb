@@ -1,36 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PSG ITech | DevOps Portal</title>
+
+    <meta
+            name="description"
+            content="PSG Institute of Technology and Applied Research - DevOps Portal"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    >
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-  <div class="login-box">
-    <h2>Login</h2>
+<!-- Background decoration -->
+<div class="background-shape shape-one"></div>
+<div class="background-shape shape-two"></div>
 
-    <form>
-      <div class="input-box">
-        <input type="text" placeholder="Username" required>
-      </div>
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
 
-      <div class="input-box">
-        <input type="password" placeholder="Password" required>
-      </div>
+        <a href="index.html" class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
 
-      <button type="submit">Login</button>
+            <div>
+                <span class="brand-main">PSG ITech</span>
+                <span class="brand-sub">DevOps Portal</span>
+            </div>
+        </a>
 
-      <p class="register">
-        Don't have an account?
-        <a href="#">Register</a>
-      </p>
-    </form>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#access">Portal</a>
+        </nav>
 
-  </div>
-</div>
+        <button class="mobile-menu" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<main>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                PSG Institute of Technology and Applied Research
+            </div>
+
+            <h1>
+                Learn.
+                <span>Build.</span>
+                Deploy.
+            </h1>
+
+            <p class="hero-text">
+                Welcome to the PSG ITech DevOps Portal.
+                Explore modern DevOps practices, tools and workflows
+                used to build and deliver software efficiently.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#access" class="btn btn-primary">
+                    Enter Portal
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    Explore DevOps
+                </a>
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <strong>CI/CD</strong>
+                    <span>Automation</span>
+                </div>
+
+                <div class="stat">
+                    <strong>Cloud</strong>
+                    <span>Deployment</span>
+                </div>
+
+                <div class="stat">
+                    <strong>DevOps</strong>
+                    <span>Culture</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO CARD -->
+        <div class="hero-visual">
+
+            <div class="terminal-card">
+
+                <div class="terminal-top">
+                    <div class="terminal-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span class="terminal-title">
+                            devops@psgitech
+                        </span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <p>
+                        <span class="terminal-green">$</span>
+                        git status
+                    </p>
+
+                    <p class="terminal-output">
+                        On branch master
+                    </p>
+
+                    <p class="terminal-output success">
+                        ✓ Working tree clean
+                    </p>
+
+                    <p>
+                        <span class="terminal-green">$</span>
+                        git push origin master
+                    </p>
+
+                    <p class="terminal-output">
+                        Enumerating objects...
+                    </p>
+
+                    <p class="terminal-output success">
+                        ✓ Deployment successful
+                    </p>
+
+                    <p>
+                        <span class="terminal-green">$</span>
+                        <span class="typing">_</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card card-git">
+                <i class="fa-brands fa-github"></i>
+                <div>
+                    <strong>GitHub</strong>
+                    <span>Version Control</span>
+                </div>
+            </div>
+
+            <div class="floating-card card-cloud">
+                <i class="fa-solid fa-cloud"></i>
+                <div>
+                    <strong>Cloud</strong>
+                    <span>Deployment</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+
+        <div class="section-heading">
+            <span class="section-label">ABOUT DEVOPS</span>
+
+            <h2>
+                What is <span>DevOps?</span>
+            </h2>
+
+            <p>
+                DevOps combines development and operations practices
+                to make software delivery faster, reliable and automated.
+            </p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+
+                <h3>Continuous Integration</h3>
+
+                <p>
+                    Developers frequently integrate their code and
+                    automated tests help detect problems early.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+
+                <h3>Continuous Delivery</h3>
+
+                <p>
+                    Applications can be tested, packaged and prepared
+                    for deployment through automated pipelines.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>Collaboration</h3>
+
+                <p>
+                    Development and operations teams work together
+                    throughout the software lifecycle.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AIM -->
+    <section class="aim-section">
+
+        <div class="aim-content">
+
+            <div class="aim-icon">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <div>
+                <span class="section-label">OUR AIM</span>
+
+                <h2>
+                    Build software.
+                    <span>Deliver faster.</span>
+                </h2>
+
+                <p>
+                    The portal provides students with a simple place
+                    to understand DevOps concepts, explore tools,
+                    and access the student and administrator dashboards.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+    <section class="section" id="technologies">
+
+        <div class="section-heading">
+            <span class="section-label">DEVOPS TOOLKIT</span>
+
+            <h2>
+                Technologies <span>We Use</span>
+            </h2>
+
+            <p>
+                Explore the technologies commonly used in modern
+                DevOps workflows.
+            </p>
+        </div>
+
+
+        <div class="technology-grid">
+
+            <div class="tech-card">
+                <i class="fa-brands fa-git-alt"></i>
+                <h3>Git</h3>
+                <p>Version Control</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Code Hosting</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Jenkins</h3>
+                <p>CI/CD Automation</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-brands fa-docker"></i>
+                <h3>Docker</h3>
+                <p>Containers</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-solid fa-cubes"></i>
+                <h3>Kubernetes</h3>
+                <p>Container Orchestration</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-brands fa-microsoft"></i>
+                <h3>Azure</h3>
+                <p>Cloud Platform</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-brands fa-linux"></i>
+                <h3>Linux</h3>
+                <p>Operating System</p>
+            </div>
+
+            <div class="tech-card">
+                <i class="fa-solid fa-code-branch"></i>
+                <h3>CI/CD</h3>
+                <p>Delivery Pipeline</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTAL ACCESS -->
+    <section class="access-section" id="access">
+
+        <div class="section-heading light">
+
+            <span class="section-label">PORTAL ACCESS</span>
+
+            <h2>
+                Choose your <span>Portal</span>
+            </h2>
+
+            <p>
+                Select the dashboard you want to access.
+            </p>
+
+        </div>
+
+
+        <div class="access-grid">
+
+            <!-- STUDENT -->
+            <div class="access-card">
+
+                <div class="access-icon student-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <span class="access-type">STUDENT</span>
+
+                <h3>Student Portal</h3>
+
+                <p>
+                    Access your student dashboard,
+                    DevOps learning resources and activities.
+                </p>
+
+                <a href="student-login.html" class="access-button">
+                    Student Login
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- ADMIN -->
+            <div class="access-card">
+
+                <div class="access-icon admin-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <span class="access-type">ADMINISTRATOR</span>
+
+                <h3>Admin Portal</h3>
+
+                <p>
+                    Manage students, monitor portal activity
+                    and access administrative features.
+                </p>
+
+                <a href="admin-login.html" class="access-button">
+                    Admin Login
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div>
+                <strong>PSG ITech</strong>
+                <span>DevOps Portal</span>
+            </div>
+
+        </div>
+
+        <p>
+            PSG Institute of Technology and Applied Research
+        </p>
+
+        <p class="copyright">
+            © <span id="year">2026</span> PSG ITech DevOps Portal.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
